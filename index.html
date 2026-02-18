@@ -3,147 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unity Growth | Global AI Automation Enterprise</title>
-<meta name="description" content="Enterprise AI Automation Agency offering global services, CRM, funnels, automation, SaaS & digital growth systems worldwide.">
-
-<script>
-function googleTranslateElementInit() {
-new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<style>
-body{margin:0;font-family:Arial;background:#0f172a;color:white;}
-header{padding:60px 20px;text-align:center;background:linear-gradient(135deg,#1e293b,#0f172a);}
-section{padding:60px 20px;max-width:1200px;margin:auto;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.card{background:#1e293b;padding:20px;border-radius:10px;transition:0.3s;}
-.card:hover{transform:scale(1.05);}
-.btn{display:inline-block;padding:12px 25px;background:#22c55e;color:black;text-decoration:none;border-radius:5px;font-weight:bold;margin:5px 0;}
-input,textarea{width:100%;padding:12px;margin:10px 0;border:none;border-radius:5px;}
-button{padding:12px 25px;background:#22c55e;border:none;border-radius:5px;font-weight:bold;cursor:pointer;}
-footer{text-align:center;padding:40px;background:#111827;}
-#adminPanel{display:none;background:#1e293b;padding:20px;margin-top:20px;border-radius:10px;}
-table{width:100%;color:white;border-collapse:collapse;}
-td,th{border:1px solid #444;padding:8px;}
-</style>
+<title>AI Marketing Automation Tool</title>
+<meta name="description" content="AI Marketing Automation Tool for WhatsApp, Email & Social Media. Generate Leads Automatically.">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-<h1>Unity Growth – AI Automation Enterprise</h1>
-<p>Global AI Systems For Businesses In 190+ Countries</p>
-<div id="google_translate_element"></div>
-<a href="#contact" class="btn">Book Strategy Call</a>
-<a href="#services" class="btn">View Services</a>
+<h1>AI Marketing Automation Platform</h1>
+<p>Automate WhatsApp, Email & Social Media Marketing Worldwide</p>
+<a href="#contact" class="btn">Get Free Demo</a>
 </header>
 
-<section id="services">
-<h2>🌍 Enterprise Services</h2>
-
+<section>
+<h2>Our Features</h2>
 <div class="grid">
-
-<div class="card"><h3>AI Chatbot Automation</h3></div>
-<div class="card"><h3>WhatsApp Automation</h3></div>
-<div class="card"><h3>CRM Setup</h3></div>
-<div class="card"><h3>Client Acquisition Funnels</h3></div>
-<div class="card"><h3>Email Automation</h3></div>
-<div class="card"><h3>Sales Pipeline Automation</h3></div>
-<div class="card"><h3>SaaS Development</h3></div>
-<div class="card"><h3>Digital Product Launch Systems</h3></div>
-<div class="card"><h3>Affiliate System Setup</h3></div>
-<div class="card"><h3>Payment Integration</h3></div>
-<div class="card"><h3>Booking System</h3></div>
-<div class="card"><h3>AI Voice Automation</h3></div>
-<div class="card"><h3>Lead Generation System</h3></div>
-<div class="card"><h3>Global Marketing Automation</h3></div>
-<div class="card"><h3>High-Converting Website Design</h3></div>
-
+<div class="card">WhatsApp Automation</div>
+<div class="card">Email Marketing</div>
+<div class="card">AI Content Generator</div>
+<div class="card">Lead Funnel Builder</div>
 </div>
 </section>
 
 <section id="contact">
-<h2>📩 Contact & Lead Capture</h2>
-
-<form onsubmit="saveLead(event)">
-<input type="text" id="name" placeholder="Name" required>
-<input type="email" id="email" placeholder="Email" required>
-<textarea id="message" placeholder="Your Business Details" required></textarea>
+<h2>Request Free Demo</h2>
+<form action="https://formspree.io/f/yourformid" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
 <button type="submit">Submit</button>
 </form>
-
-<br>
-
-<a class="btn" href="mailto:ajholabibi29@gmail.com">Send Direct Email</a>
-<a class="btn" href="https://wa.me/916299901015">WhatsApp Chat</a>
-
-</section>
-
-<section>
-<h2>🔐 Admin Dashboard</h2>
-
-<input type="password" id="adminPass" placeholder="Enter Admin Password">
-<button onclick="loginAdmin()">Login</button>
-
-<div id="adminPanel">
-<h3>Stored Leads</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Email</th>
-<th>Message</th>
-</tr>
-</thead>
-<tbody id="leadTable"></tbody>
-</table>
-</div>
-
 </section>
 
 <footer>
-<h3>🌐 Global Social Media</h3>
-<p>
-Facebook | Instagram | LinkedIn | YouTube | TikTok | Twitter/X | Pinterest | Reddit | Telegram | Threads
-</p>
-<p>© 2026 Unity Growth – AI Automation Enterprise</p>
+<p>© 2026 AI Automation by Muhammad Alam</p>
 </footer>
-
-<script>
-function saveLead(e){
-e.preventDefault();
-let name=document.getElementById("name").value;
-let email=document.getElementById("email").value;
-let message=document.getElementById("message").value;
-
-let leads=JSON.parse(localStorage.getItem("leads"))||[];
-leads.push({name,email,message});
-localStorage.setItem("leads",JSON.stringify(leads));
-
-alert("Lead Saved Successfully!");
-document.querySelector("form").reset();
-}
-
-function loginAdmin(){
-let pass=document.getElementById("adminPass").value;
-if(pass==="unity123"){
-document.getElementById("adminPanel").style.display="block";
-loadLeads();
-}else{
-alert("Wrong Password");
-}
-}
-
-function loadLeads(){
-let leads=JSON.parse(localStorage.getItem("leads"))||[];
-let table=document.getElementById("leadTable");
-table.innerHTML="";
-leads.forEach(l=>{
-table.innerHTML+=`<tr><td>${l.name}</td><td>${l.email}</td><td>${l.message}</td></tr>`;
-});
-}
-</script>
 
 </body>
 </html>
